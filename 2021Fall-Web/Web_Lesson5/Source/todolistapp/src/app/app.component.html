@@ -1,0 +1,26 @@
+<!-- display heading from .ts file -->
+<h1 style="text-align: center"> TO DO LIST FOR 2021 </h1>
+<!-- To enter task in a textbox and submit button to add task -->
+<div style="text-align: center">
+  <input type ="text" #newTodo/>
+  <button (click)="addTodo(newTodo.value);newTodo.value=''">Add Task</button>
+</div>
+ <!-- display when no tasks -->
+<h3 *ngIf = "todos.length == 0" style="text-align: center">Your to do list is empty</h3>
+<!-- / if tasks available then display in a table -->
+<table *ngIf = "todos.length > 0" style="margin-left: auto; margin-right: auto;">
+  <tr>
+    <th>Task List</th>
+    <th>Status</th>
+    <th>Actions</th>
+  </tr>
+  <!-- add items in the table -->
+  <tr *ngFor="let todo of todos; index as i" (click)="changeStatus(i)">
+    <td [style.background-color]="todo.status === 'completed' ? 'lightgreen' : 'lavenderblush'">{{todo.label}}</td>
+    <td [style.background-color]="todo.status === 'completed' ? 'lightgreen' : 'lavenderblush'">{{todo.status}}</td>
+    <td [style.background-color]="todo.status === 'completed' ? 'lightgreen' : 'lavenderblush'">
+      <!-- button delete the task -->
+      <button (click)="deleteTodo(todo)">delete</button>
+    </td>
+  </tr>
+</table>

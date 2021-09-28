@@ -1,0 +1,24 @@
+/* style sheet file */
+td {
+    background-color: lavenderblush;
+    text-align: center;
+    padding: 5px;
+}
+th {
+    background-color: lavenderblush;
+    color: black;
+    padding: 5px;
+    width: 200px;
+}
+input{
+    height: 40px;
+    width: 300px;
+}
+
+button{
+    height: 40px;
+    width: 100px;
+    background-color: black;
+    color: white;
+
+}
